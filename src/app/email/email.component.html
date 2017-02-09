@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form" #formData='ngForm' (ngSubmit)="onSubmit(formData)" autocomplete="off">
+                        <h1>Sign In</h1>
+                        <div class="form-group has-error" *ngIf="error">
+                            <span class="help-block">{{ error }}</span>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Email address.." (ngModel)="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" placeholder="Password" (ngModel)="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" [disabled]="!formData.valid" class="btn btn-primary">Log in</button>
+                        </div>
+                        <div class="form-group">
+                            <a routerLink="/signup" class="alc">Don't have an account?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
